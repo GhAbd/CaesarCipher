@@ -22,7 +22,7 @@ public class CaesarCipher {
         }
         return encrypted.toString();
     }
-
+    
     
     public void testCaesar(){
     int key = 23;
@@ -30,5 +30,22 @@ public class CaesarCipher {
     String message = fr.asString();
     String encrypted = encrypt(message,key);
     System.out.println(encrypted);
+    String decrypted = decrypt(encrypted,key);
+    System.out.println(decrypted); 
+    }
+    
+    public String decrypt(String input, int key){
+        StringBuilder decrypted = new StringBuilder(input);
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String shiftedAlphabet = alphabet.substring(key,26)+alphabet.substring(0,key)+alphabet.substring(key+26)+alphabet.substring(26,key+26);
+        
+        for (int i=0;i<input.length();i++){
+            char currChar = decrypted.charAt(i);
+            int idx = shiftedAlphabet.indexOf(currChar);
+            if (idx !=-1){
+                decrypted.setCharAt(i, alphabet.charAt(idx));
+            }
+        }
+        return decrypted.toString();
     }
 }
