@@ -10,8 +10,8 @@ import edu.duke.*;
 public class CaesarCipher {
     public String encrypt(String input, int key){
         StringBuilder encrypted = new StringBuilder(input);
-        String alphapet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String shiftedAlphapet = alphapet.substring(key)+alphapet.substring(0,key);
+        String alphapet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String shiftedAlphapet = alphapet.substring(key,26)+alphapet.substring(0,key)+alphapet.substring(key+26)+alphapet.substring(26,key+26);
         
         for (int i=0;i<input.length();i++){
             char currChar = encrypted.charAt(i);
@@ -22,9 +22,10 @@ public class CaesarCipher {
         }
         return encrypted.toString();
     }
+
     
     public void testCaesar(){
-    int key = 17;
+    int key = 23;
     FileResource fr = new FileResource();
     String message = fr.asString();
     String encrypted = encrypt(message,key);
