@@ -4,7 +4,7 @@ This is the project README file.
 
 PROJECT TITLE: Caesar Cipher
 PURPOSE OF PROJECT: To practice Java programming
-VERSION or DATE: V 0.0 released on 7th mar, 2017
+VERSION or DATE: V0.1 released on 7th mar, 2017
 HOW TO START THIS PROJECT: call testCaesar method to start the project
 AUTHORS:	Abdalrahman Ghazal, github.com/GhAbd
 USER INSTRUCTIONS: 
