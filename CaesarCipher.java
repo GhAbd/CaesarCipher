@@ -1,23 +1,23 @@
 
 /**
- * Write a description of CaesarCipher here.
+ * CaesarCipher encrypts a file with a classic ciphering method
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Abdalrahman Ghazal 
+ * @version V0.1
  */
 import edu.duke.*;
 
 public class CaesarCipher {
     public String encrypt(String input, int key){
         StringBuilder encrypted = new StringBuilder(input);
-        String alphapet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        String shiftedAlphapet = alphapet.substring(key,26)+alphapet.substring(0,key)+alphapet.substring(key+26)+alphapet.substring(26,key+26);
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String shiftedAlphabet = alphabet.substring(key,26)+alphabet.substring(0,key)+alphabet.substring(key+26)+alphabet.substring(26,key+26);
         
         for (int i=0;i<input.length();i++){
             char currChar = encrypted.charAt(i);
-            int idx = alphapet.indexOf(currChar);
+            int idx = alphabet.indexOf(currChar);
             if (idx !=-1){
-                encrypted.setCharAt(i, shiftedAlphapet.charAt(idx));
+                encrypted.setCharAt(i, shiftedAlphabet.charAt(idx));
             }
         }
         return encrypted.toString();
